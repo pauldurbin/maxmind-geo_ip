@@ -11,7 +11,7 @@ module Maxmind
         #
         def lookup_country_by_ip(ip, faraday_options = {})
           Maxmind::GeoIp::Country.new(
-            get("/country/#{ip}", {}, faraday_options)
+            JSON.parse(get("/country/#{ip}", {}, faraday_options))
           ).country
         end
 
@@ -24,7 +24,7 @@ module Maxmind
         #
         def lookup_continent_by_ip(ip, faraday_options = {})
           Maxmind::GeoIp::Country.new(
-            get("/country/#{ip}", {}, faraday_options)
+            JSON.parse(get("/country/#{ip}", {}, faraday_options))
           ).continent
         end
       end

@@ -2,7 +2,7 @@ module Maxmind
   module GeoIp
     class Country
       def initialize(params = {}, locale = 'en')
-        @params = JSON.parse params
+        @params = params
         @locale = locale.empty? ? 'en' : locale
       end
 
