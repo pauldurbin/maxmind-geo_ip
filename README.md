@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'maxmind-geo_ip'
+gem 'maxmind-geo_ip', github: 'pauldurbin/maxmind-geo_ip'
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ Or install it yourself as:
 
 Assuming you already have an account with Maxmind, you'll first need to login, make a note of your user ID and your license key.
 
-In `config/initializers/maxmind-geo-ip.rb`
+In `config/initializers/maxmind_geo_ip.rb`
 
 ```ruby
 Maxmind::GeoIp.configure do |config|

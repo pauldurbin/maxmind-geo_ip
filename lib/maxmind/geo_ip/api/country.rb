@@ -27,6 +27,19 @@ module Maxmind
             JSON.parse(get("/country/#{ip}", {}, faraday_options))
           ).continent
         end
+
+        #
+        # Returns the iso country code based on a provided IP address
+        #
+        # @param ip [String]
+        # @param faraday_options [Hash] to override defaults or add anything additional to Faraday
+        # @returns [String] iso code
+        #
+        def lookup_iso_code_by_ip(ip, faraday_options = {})
+          Maxmind::GeoIp::Country.new(
+            JSON.parse(get("/country/#{ip}", {}, faraday_options))
+          ).iso_code
+        end
       end
     end
   end
